@@ -7,6 +7,10 @@ import { CreateBoardDto } from './dto/create-board.dto';
 export class BoardsService {
   private boards: Board[] = [];
 
+  getBoards(): Board[] {
+    return this.boards;
+  }
+
   createBoard(createBoardDto: CreateBoardDto): Board {
     const { title, content } = createBoardDto;
     const board: Board = {
