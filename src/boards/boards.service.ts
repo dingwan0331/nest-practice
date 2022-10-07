@@ -35,6 +35,7 @@ export class BoardsService {
   }
 
   deleteBoard(id: string): void {
+    const foundBoard = this.getBoard(id);
     this.boards = this.boards.filter((board) => board.id !== id);
   }
 
