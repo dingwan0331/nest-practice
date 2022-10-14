@@ -16,4 +16,11 @@ export class BoardRepository extends Repository<Board> {
 
     return await this.save(board);
   }
+
+  async updateBoardStatus(board: Board, status: BoardStatus): Promise<Board> {
+    board.status = status;
+
+    const result = board.save();
+    return result;
+  }
 }
